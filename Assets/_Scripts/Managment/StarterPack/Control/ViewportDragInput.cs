@@ -13,7 +13,7 @@ public class ViewportDragInput : MonoBehaviour, IDragHandler
     {
         OnDragPointer?.Invoke(
             new Vector2(eventData.delta.x / Screen.width, eventData.delta.y / Screen.height),
-            new Vector2(eventData.position.x / Screen.width, eventData.position.y / Screen.height)
+            new Vector2((eventData.position.x / Screen.width * 100), (eventData.position.y / Screen.height) * 100) //Костыль, но так удобнее работать
         );
     }
 }
